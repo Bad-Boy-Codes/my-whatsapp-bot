@@ -18,7 +18,7 @@ module.exports = {
                 );
             }
         });
-        await callback();
+       // await callback();
         console.log(
             "Handler",
             "Loaded Events",
@@ -44,7 +44,7 @@ module.exports = {
                 await Client.commands.set(command.name.toLowerCase(), command);
             }
         }
-        await callback();
+        //await callback();
         console.log(
             "Handler",
             "Loaded Commands",

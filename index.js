@@ -5,4 +5,3 @@ Object.defineProperty(Object.prototype, "Client", {
 });
 
 Client.connect();
-

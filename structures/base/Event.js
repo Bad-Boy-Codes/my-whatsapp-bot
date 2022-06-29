@@ -20,14 +20,14 @@ module.exports = (event, data) => {
     Event.directory = data?.directory;
     Event.category = category !== "events" ? category : null;
     Event.name = event?.name ?? parse(data.directory)?.name;
-    // Event.type = Functions.Boolify(event?.once, {
+     Event.type = Event.type||"on"; //Functions.Boolify(event?.once, {
     //     isNull: "on",
     //     isTrue: "once",
     //     isFalse: "on"
     // });
-    // Event.emitter =
-    //     (typeof event.emitter === "string"
-    //         ? Event.client[event.emitter]
-    //         : event.emitter) || Client;
+    Event.emitter =
+        (typeof event.emitter === "string"
+            ? Event.client[event.emitter]
+            : event.emitter) || Client;
     return Event;
 };

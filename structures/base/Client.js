@@ -5,9 +5,9 @@ module.exports = class WebClient extends Client {
         super(props);
         this.handler = require("../handler");
         this.commands = new Map();
-        this.commands.search = (cmd) => Client.commands.get(args[0]) ||
+        this.commands.search = (cmds) => Client.commands.get(cmds) ||
             Client.commands.filter(
-                (cmd) => cmd.aliases && cmd.aliases.includes(args[0])
+                (cmd) => cmd.aliases && cmd.aliases.includes(cmds)
             )[0];
         this.events = new Map();
         this.prefix = ".";
